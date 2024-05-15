@@ -13,6 +13,8 @@
     <link href="css/landing-page.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -157,7 +159,7 @@
                 <div class="clearfix"></div>
                 <h2 class="section-heading">¡Contáctanos!</h2>
                 <p class="lead">¿Estás listo para llevar tu negocio al siguiente nivel? ¡Ponte en contacto con nosotros hoy mismo y comienza tu viaje digital! Completa el formulario a continuación y nos pondremos en contacto contigo a la brevedad.</p>
-                <form action="#" method="post" id="contactForm" name="contactForm" novalidate>
+                <form id="contactForm" novalidate>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Por favor ingresa tu nombre.">
                         <p class="help-block text-danger"></p>
@@ -207,73 +209,11 @@
             </div>
         </div>
     </footer>
+    <script src="formulario.js"></script>
     <script src="js/jquery.js"></script>
    <script src="js/bootstrap.min.js"></script>
     <!-- Agrega el script de EmailJS al HTML -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-    // Inicializa EmailJS con tu User ID
-    (function() {
-        emailjs.init("user_your_user_id"); // Reemplaza "user_your_user_id" con tu User ID de EmailJS
-    })();
 
-    // Evento que se ejecuta cuando el DOM está cargado
-    document.addEventListener('DOMContentLoaded', () => {
-        // Obtiene el formulario de contacto por su ID
-        const contactForm = document.getElementById('contactForm');
-
-        // Agrega un evento de escucha al enviar el formulario
-        contactForm.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Evita que el formulario se envíe automáticamente
-
-            // Obtiene los valores del formulario
-            const userName = document.getElementById('name').value;
-            const userEmail = document.getElementById('email').value;
-            const userMessage = document.getElementById('message').value;
-
-            try {
-                // Envía el correo electrónico utilizando EmailJS
-                const response = await emailjs.send("service_your_service_id", "template_your_template_id", {
-                    to_name: userName,
-                    from_name: userEmail,
-                    message: userMessage
-                });
-
-                // Verifica si la solicitud se completó con éxito
-                if (response && response.status === 200) {
-                    // Muestra un mensaje de éxito utilizando SweetAlert
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Éxito',
-                        text: 'El correo electrónico se ha enviado correctamente.',
-                    }).then((result) => {
-                        // Recarga la página cuando el usuario hace clic en 'OK'
-                        if (result.isConfirmed) {
-                            location.reload();
-                        }
-                    });
-
-                    // Limpia los campos del formulario
-                    contactForm.reset();
-                } else {
-                    // Muestra un mensaje de error si la solicitud no se completó con éxito
-                    showErrorAlert();
-                }
-            } catch (error) {
-                // Muestra un mensaje de error si ocurre un error en la solicitud
-                showErrorAlert();
-            }
-        });
-    });
-
-    // Función para mostrar un mensaje de error utilizando SweetAlert
-    const showErrorAlert = () => {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Ocurrió un problema al enviar el correo electrónico. Por favor, inténtalo de nuevo más tarde.',
-        });
-    };
 </script>
 
 </body>
