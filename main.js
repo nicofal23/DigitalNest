@@ -1,69 +1,72 @@
-// main.js
-
-// Agrega el script de EmailJS al HTML
-const emailjsScript = document.createElement('script');
-emailjsScript.src = 'https://cdn.emailjs.com/dist/email.min.js';
-document.head.appendChild(emailjsScript);
-
-// Inicializa EmailJS con tu User ID
-(function() {
-    emailjs.init("user_your_user_id"); // Reemplaza "user_your_user_id" con tu User ID de EmailJS
-})();
-
-// Evento que se ejecuta cuando el DOM está cargado
 document.addEventListener('DOMContentLoaded', () => {
-    // Obtiene el formulario de contacto por su ID
     const contactForm = document.getElementById('contactForm');
-    
-    // Agrega un evento de escucha al enviar el formulario
-    contactForm.addEventListener('submit', async (event) => {
-        event.preventDefault(); // Evita que el formulario se envíe automáticamente
-        
-        // Obtiene los valores del formulario
-        const userName = document.getElementById('name').value;
-        const userEmail = document.getElementById('email').value;
-        const userMessage = document.getElementById('message').value;
-        
+    const botonEnviar = document.getElementById('botonEnviar');
+  
+    botonEnviar.addEventListener('click', async (event) => {
+        event.preventDefault();
+  
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const mensaje = document.getElementById('mensaje').value;
+  
+        const body = {
+            service_id: 'service_acct3k1',
+            template_id: 'template_6h8ehdl',
+            user_id: 'O4mvOOZbR9fx_QTde',
+            template_params: {
+                'to_name': nombre,
+                'from_name': email,
+                'message': mensaje,
+            }
+        };
+  
         try {
-            // Envía el correo electrónico utilizando EmailJS
-            const response = await emailjs.send("service_your_service_id", "template_your_template_id", {
-                to_name: userName,
-                from_name: userEmail,
-                message: userMessage
-            });
-            
-            // Verifica si la solicitud se completó con éxito
-            if (response && response.status === 200) {
-                // Muestra un mensaje de éxito utilizando SweetAlert
+            const response = await sendEmail(body);
+            console.log(response);
+            if (response && response.includes('OK')) {
+                // Mostrar SweetAlert de éxito
                 Swal.fire({
                     icon: 'success',
                     title: 'Éxito',
                     text: 'El correo electrónico se ha enviado correctamente.',
                 }).then((result) => {
-                    // Recarga la página cuando el usuario hace clic en 'OK'
+                    // Refrescar la página cuando el usuario hace clic en 'OK'
                     if (result.isConfirmed) {
                         location.reload();
                     }
                 });
-                
-                // Limpia los campos del formulario
-                contactForm.reset();
+                // Limpiar los campos del formulario
+                document.getElementById('nombre').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('mensaje').value = '';
             } else {
-                // Muestra un mensaje de error si la solicitud no se completó con éxito
+                // Mostrar SweetAlert de error si la respuesta no contiene 'OK'
                 showErrorAlert();
             }
         } catch (error) {
-            // Muestra un mensaje de error si ocurre un error en la solicitud
+            // Mostrar SweetAlert de error si hay un error en la solicitud
             showErrorAlert();
         }
     });
-});
-
-// Función para mostrar un mensaje de error utilizando SweetAlert
-const showErrorAlert = () => {
-    Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Ocurrió un problema al enviar el correo electrónico. Por favor, inténtalo de nuevo más tarde.',
-    });
-};
+  
+    const showErrorAlert = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Ocurrió un problema al enviar el correo electrónico. Por favor, inténtalo de nuevo más tarde.',
+        });
+    };
+  
+    const sendEmail = async (body) => {
+        const settings = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        };
+        const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", settings);
+        const data = await response.text(); // Obtener la respuesta como texto
+        return data;
+    };
+  });
