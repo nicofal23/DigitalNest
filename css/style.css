@@ -64,3 +64,11 @@ button[type="submit"]:hover {
     background-color: #8b848430;
     padding: 15px;
 }
+
+.topnav{
+    padding: 0px !important;
+}
+
+.logoEmpresa {
+    width: 51px;
+}
