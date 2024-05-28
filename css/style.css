@@ -91,4 +91,8 @@ button[type="submit"]:hover {
     .row {
         flex-direction: column-reverse;
     }
+    .row1{
+        display: flex;
+    justify-content: center;
+    }
 }
