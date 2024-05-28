@@ -72,3 +72,23 @@ button[type="submit"]:hover {
 .logoEmpresa {
     width: 51px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 708px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+}
