@@ -1,0 +1,87 @@
+/* Animaciones básicas para el sitio web */
+
+/* Fade-in effect for sections */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero, .info-section, .reviews-container, .carousel-container, #contact, .footer-content, .modal-content {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Slide-in from bottom for buttons */
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+button, .modal-content {
+    animation: slideInUp 0.8s ease-in-out;
+}
+
+/* Zoom-in effect for images */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.hero-image img, .info-image img {
+    animation: zoomIn 1s ease-in-out;
+}
+
+/* Bounce effect for the logo */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.logo img {
+    animation: bounce 2s infinite;
+}
+
+/* Modal fade-in */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content {
+    animation: modalFadeIn 0.5s ease;
+}
+
+/* Hover effects for buttons */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}

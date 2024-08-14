@@ -30,7 +30,9 @@
     <meta name="twitter:title" content="Servicios de Creación de Páginas Web y Reparación de PC">
     <meta name="twitter:description" content="Servicios profesionales de desarrollo web, reparación de PC y venta de insumos informáticos.">
     <meta name="twitter:image" content="./assets/img/twitter-card-image.jpg"> <!-- Imagen representativa para Twitter -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="animaciones.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -65,12 +67,20 @@
             <img src="./assets/img/web.jpg" alt="Imagen de Diseño Web"> <!-- Imagen representativa del servicio de diseño web -->
         </div>
     </section>
+    <section id="our-work">
+        <h2>Nuestros Trabajos</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <!-- Aquí se cargarán los items del carrusel -->
+            </div>
+        </div>
+    </section>
 
     <section id="pc-repair" class="info-section">
         <div class="content">
             <h1>Servicio Técnico de Reparación de PC</h1>
             <p>Ofrecemos soluciones rápidas y eficaces para cualquier problema técnico en tu computadora. Contamos con técnicos especializados para garantizar la mejor atención.</p>
-            <button>Solicita una Reparación</button>
+            <button id="repairButton">Solicita una Reparación</button>
         </div>
         <div class="info-image">
             <img src="./assets/img/reparacion.jpg" alt="Imagen de Reparación de PC"> <!-- Imagen representativa del servicio de reparación de PC -->
@@ -81,21 +91,14 @@
         <div class="content">
             <h1>Insumos y Accesorios para tu PC</h1>
             <p>Encuentra todo lo que necesitas para tu computadora, desde componentes hasta accesorios. Calidad garantizada y al mejor precio.</p>
-            <a href="ecommerce.html"><button>Visita nuestra Tienda</button></a>
+            <a href="./ecommerce/ecommerce.html"><button>Visita nuestra Tienda</button></a>
         </div>
         <div class="info-image">
             <img src="./assets/img/venta.jpg" alt="Imagen de Insumos de PC"> <!-- Imagen representativa de insumos de PC -->
         </div>
     </section>
 
-    <section id="our-work">
-        <h2>Nuestros Trabajos</h2>
-        <div class="carousel-container">
-            <div class="carousel">
-                <!-- Aquí se cargarán los items del carrusel -->
-            </div>
-        </div>
-    </section>
+    
     
 
     <section id="testimonials">
@@ -134,17 +137,42 @@
         <form>
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" required class="input">
-
+    
             <label for="email">Correo Electrónico:</label>
             <input type="email" id="email" name="email" required class="input">
-
+    
             <label for="message">Mensaje:</label>
             <textarea id="message" name="message" required class="input"></textarea>
-
-            <button type="submit">Enviar</button>
+    
+            <!-- Agrega el id "sendMessageButton" al botón -->
+            <button type="submit" id="sendMessageButton">Enviar</button>
         </form>
     </section>
 
+    <!--Modal inicio diseño web -->
+<div id="consultModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Consulta - Diseño WEB</h2>
+        <form id="consultForm">
+            <label for="consultName">Nombre:</label>
+            <input type="text" id="consultName" name="name" required class="input">
+    
+            <label for="consultEmail">Correo Electrónico:</label>
+            <input type="email" id="consultEmail" name="email" required class="input">
+    
+            <label for="consultTelefono">Telefono de contacto:</label>
+            <input type="telefono" id="consultTelefono" name="telefono" required class="input">
+
+            <label for="consultMessage">Mensaje:</label>
+            <textarea id="consultMessage" name="message" required class="input" placeholder="Cuentanos brevemente cual es tu idea"></textarea>
+    
+            <button type="submit" id="sendConsultButton">Enviar</button>
+        </form>
+    </div>
+</div>
+    <!--Modal fin -->
+    
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
@@ -170,7 +198,13 @@
         </div>
     </footer>
     
-
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("O4mvOOZbR9fx_QTde"); // Reemplaza con tu user ID de EmailJS
+        })();
+    </script>
+    <script src="formulario.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
