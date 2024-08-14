@@ -1,0 +1,484 @@
+/* General Styles */
+body {
+    overflow-x: hidden; /* Evita el scroll lateral */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+header {
+    background-color: #1a73e8;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
+    transition: top 0.3s;
+}
+
+header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1a73e8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    height: 50px;
+}
+
+/* Navbar Styles for Large Screens */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Asegura que los elementos del menú se muestren en línea */
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #0c53b7;
+}
+
+/* Hamburger Menu Styles for Small Screens */
+.hamburger {
+    display: none; /* Oculto por defecto para pantallas grandes */
+    cursor: pointer;
+    z-index: 1001;
+    width: 30px;
+    height: 22px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #fff;
+    border-radius: 4px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger span:nth-child(2) {
+    top: 9px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 18px;
+}
+
+.hamburger.active span:nth-child(1) {
+    top: 9px;
+    transform: rotate(135deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.hamburger.active span:nth-child(3) {
+    top: 9px;
+    transform: rotate(-135deg);
+}
+
+
+/* Estilo Global para el Body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Secciones Generales */
+section {
+    padding: 60px 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+section h1, section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1a73e8;
+}
+
+section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1em;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0c53b7;
+}
+
+/* Estilo para Imágenes */
+.hero-image img, .info-image img {
+    max-width: 95%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la Sección de Testimonios */
+#testimonials {
+    background-color: #eaf4fe;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.review-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: left;
+}
+
+.review-text {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.review-rating {
+    margin-bottom: 10px;
+}
+
+.review-rating span {
+    font-size: 1.2em;
+    color: #ffcc00; /* Color de las estrellas */
+}
+
+.review-author {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Estilo para el Formulario de Contacto */
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact label {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+    text-align: left;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact textarea:focus {
+    border-color: #1a73e8;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 5px rgba(26, 115, 232, 0.5);
+    outline: none;
+}
+
+#contact textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+#contact button {
+    background-color: #1a73e8;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+#contact button:hover {
+    background-color: #0c53b7;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+footer .social-media {
+    margin-top: 10px;
+}
+
+
+
+img {
+    margin: 10px;
+}
+
+
+
+/* Estilo de la sección de "Nuestros Trabajos" */
+#our-work {
+    padding: 50px 20px;
+    background-color: #f9fbfd;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    box-sizing: border-box;
+    perspective: 1000px;
+    text-align: center; /* Centra el contenido dentro del contenedor */
+    width: 250px; /* Ajusta el ancho de cada contenedor de la imagen */
+    height: 300px; /* Ajusta la altura para que el contenedor sea más cuadrado */
+}
+
+.carousel-item a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 10px; /* Ajustado el padding para que la imagen se vea más cercana */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    height: 100%; /* Asegura que el enlace ocupe toda la altura del contenedor */
+}
+
+.carousel-item a:hover {
+    transform: rotateY(10deg) rotateX(10deg) translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-item img {
+    max-width: 80%; /* Ajusta el tamaño de la imagen para que no ocupe todo el ancho */
+    max-height: 70%; /* Ajusta la altura máxima de la imagen */
+    margin: 0 auto 10px; /* Centra la imagen y reduce el margen inferior */
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item p {
+    font-size: 1em;
+    margin: 5px 0 0 0; /* Reduce el margen superior para acercar el texto */
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* Animación para el desplazamiento continuo */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+.descripcionJson{
+    color: black !important;
+}
+
+
+
+
+
+
+
+/* Navbar Styles for Mobile */
+#nav-menu {
+    display: flex; /* Se muestra por defecto en pantallas grandes */
+    flex-direction: row; /* Los elementos se mostrarán en una fila */
+}
+
+
+/* Tablets: 768px - 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    section {
+        padding: 40px 20px;
+    }
+
+    section h1, section h2 {
+        font-size: 2em;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    #contact form {
+        padding: 20px;
+    }
+
+    .review-card {
+        max-width: 80%;
+    }
+}
+
+/* Móviles: Menos de 768px */
+@media screen and (max-width: 767px) {
+    section {
+        padding: 30px 15px;
+    }
+
+    section h1, section h2 {
+        font-size: 1.8em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    #contact form {
+        padding: 15px;
+    }
+
+    .review-card {
+        max-width: 100%;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+    }
+    .hamburger {
+        display: block; /* Mostrar el icono de hamburguesa solo en móviles */
+    }
+
+    #nav-menu {
+        display: none; /* Ocultar el menú de navegación completo en móviles */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #1a73e8;
+        width: 100%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #nav-menu.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    #nav-menu li {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #nav-menu li a {
+        color: #fff;
+        padding: 10px 15px;
+        display: block;
+        text-decoration: none;
+    }
+}

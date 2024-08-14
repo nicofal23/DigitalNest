@@ -1,0 +1,40 @@
+[
+    {
+        "title": "Invitacion XV",
+        "image": "./assets/img/mia.png",
+        "link": "https://mia15.vercel.app/",
+        "descripcion": "Diseño para una carta de invitación a un cumple de XV"
+    },
+    {
+        "title": "Catalogo Mayorista",
+        "image": "./assets/img/bolita.png",
+        "link": "https://bolita-mayorista.vercel.app",
+        "descripcion": "Catalogo con usuario y Clave para que el vendedor tenga una lista de productos y precios. Ademas pueda realizar el pedido"
+    },
+    {
+        "title": "Catalogo de productos",
+        "image": "./assets/img/protech.png",
+        "link": "https://www.protechargentina.com.ar",
+        "descripcion": "Creacion y diseño de un catalogo de productos de ciclismo y merchandising"
+    },
+    {
+        "title": "Portafolio para diseñador",
+        "image": "./assets/img/porfolio.png",
+        "link": "https://www.nicolasdev.com.ar",
+        "descripcion": "Creacion y diseño de portafolio para Programador"
+    },
+    {
+        "title": "Desarrollo de carta y adm de mesas",
+        "image": "./assets/img/countrybar.png",
+        "link": "https://tiny-rolypoly-41073f.netlify.app/",
+        "descripcion": "Creacion y diseño de carta con QR y administracion de mesas "
+    },
+    {
+        "title": "Diseño y armado emprentienda",
+        "image": "./assets/img/tintanegra.png",
+        "link": "https://tintanegraind.ar/",
+        "descripcion": "Diseñamos y dejamos lista para usar tu emprentienda."
+    }
+]
+
+
