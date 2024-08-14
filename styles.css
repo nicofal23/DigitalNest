@@ -489,10 +489,34 @@ footer {
     .review-card {
         max-width: 80%;
     }
+    form {
+        max-width: 90%; /* Permite que el formulario ocupe todo el ancho disponible */
+        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    label {
+        font-size: 14px; /* Reduce el tamaño de la fuente para los labels */
+    }
+
+    input, textarea {
+        font-size: 16px; /* Asegura que el texto sea legible */
+        padding: 10px; /* Aumenta el padding para mejor interacción en pantallas táctiles */
+    }
+
+    button {
+        font-size: 18px; /* Aumenta el tamaño de la fuente para el botón */
+        padding: 15px; /* Aumenta el padding para mejor interacción */
+    }
+    .input{
+        width: 90% !important;
+    }
 }
 
 /* Móviles: Menos de 768px */
 @media screen and (max-width: 767px) {
+    .input {
+        width:  90% !important;
+    }
     section {
         padding: 30px 15px;
     }
@@ -556,4 +580,36 @@ footer {
         display: block;
         text-decoration: none;
     }
+}
+
+
+/* Estilos generales del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Limita el ancho máximo del formulario */
+    margin: 0 auto; /* Centra el formulario */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+/* Estilos adicionales para un mejor diseño responsivo */
+input, textarea {
+    width: 100%; /* Asegura que los campos ocupen todo el ancho disponible */
+    margin-bottom: 15px; /* Espaciado entre los campos */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
