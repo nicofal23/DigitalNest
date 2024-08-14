@@ -382,6 +382,81 @@ img {
 
 
 
+footer {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-nav ul li a {
+    color: #ECF0F1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+    color: #3498DB;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.social-media a:hover img {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    border-top: 1px solid #34495E;
+    padding-top: 15px;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-bottom a {
+    color: #ECF0F1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: #3498DB;
+}
 
 
 
